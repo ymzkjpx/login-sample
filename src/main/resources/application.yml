@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: { id }
+            client-secret: { secret }
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            # e.g. https://dev--123.us.auth0.com/
+            issuer-uri: https://{domain-name}/
